@@ -1,0 +1,49 @@
+  <!--navbar.ejs Giselle Fe 301215601 2/10/2022-->
+  <nav class="navbar navbar-expand-lg bg-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">COMM229</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          
+          <% if (title == "Home"){ %> 
+            <li class="nav-item active">
+          <% } else { %> 
+          <li class="nav-item">
+            <% } %> 
+            <a class="nav-link" aria-current="page" href="/home"><i class="fas fa-house-user"></i> Home </a>
+          </li>
+          <% if (title == "About Me"){ %> 
+            <li class="nav-item active">
+          <% } else { %> 
+          <li class="nav-item">
+            <% } %> 
+            <a class="nav-link" aria-current="page" href="/about"> <i class="fa-solid fa-person"></i> About Me</a>
+          </li>
+          <% if (title == "Projects"){ %> 
+            <li class="nav-item active">
+          <% } else { %> 
+          <li class="nav-item">
+            <% } %> 
+            <a class="nav-link" aria-current="page" href="/projects"> <i class="fa-solid fa-list-check"></i> Projects</a>
+          </li>
+          <% if (title == "Services"){ %> 
+            <li class="nav-item active">
+          <% } else { %> 
+          <li class="nav-item">
+            <% } %> 
+            <a class="nav-link" aria-current="page" href="/services"> <i class="fa-solid fa-desktop"></i> Services</a>
+          </li>
+          <% if (title == "Contact"){ %> 
+            <li class="nav-item active">
+          <% } else { %> 
+          <li class="nav-item">
+            <% } %> 
+            <a class="nav-link" aria-current="page" href="/contact"> <i class="fa-solid fa-phone-volume"></i> Contact</a>
+          </li>
+      </div>
+    </div>
+  </nav>
+  
