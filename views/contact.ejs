@@ -4,40 +4,21 @@
 <%- include('partials/navbar.ejs')%>
 
 <!--Main Content -->
-<main class="container"> 
-    <div class="jumbotron">
-      <h3 class="display-4"> <%= title %> us! </h3>
-      
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="First Name">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Last Name">
-      </div>
-
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"></label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com ">
-      </div>
-     
-
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label"></label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Message" rows="8"></textarea>
-      </div>
-    
-      
-     
-     
-    
-      
-        <div class="col-12">
-          <button class="btn btn-primary" type="submit">Submit form</button>
+    <form class="form">
+        <h2>CONTACT US</h2>
+        <p><strong>Address: </strong>277 St. George st, Toronto, ON</p>
+        <p><strong>Phone: </strong>289-892-2642</p>
+        <p><strong>Email: </strong>gfecolls@my.centennialcollege.ca</p>
+        <p type="Name:"><input placeholder="Write your name here.."></input></p>
+        <p type="Email:"><input placeholder="Let us know how to contact you back.."></input></p>
+        <p type="Message:"><input placeholder="What would you like to tell us.."></input></p>
+        <div class="button">
+            <a href="/">Send Message</a>
         </div>
-      </form>
+    </form>
 
 <%- include('partials/bottom_nav.ejs')%> 
 <%- include('partials/footer.ejs')%> 
    
+    
+  

@@ -7,11 +7,24 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
+let compress = require('compression');
+let bodyParser = require('body-parser');
+let methodOverride = require('method-override');
+let session = require('express-session');
+let flash = require('connect-flash');
+let passport = require('passport');
 
 let indexRouter = require('./routes/index');
 let usersRouter = require('./routes/users');
+var businessRouter = require('../routes/business');
 
 let app = express();
+
+app.use(session({
+saveUninitialized: true,
+resave: true,
+secret: "sessionSecret"
+}));
 
 
 // view engine setup
@@ -27,8 +40,15 @@ app.use('/images', express.static(__dirname + 'public/images'));
 
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
+// Sets up passport
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/business', businessRouter);
 
 
 

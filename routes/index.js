@@ -2,30 +2,21 @@
 
 var express = require('express');
 var router = express.Router();
+let controllerIndex = require('../controllers/index.controller');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', {title: 'Home'});
-});
-/* GET home page. */
-router.get('/home', function(req, res, next) {
-  res.render('index', {title: 'Home'});
-});
-/* GET about page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', {title: 'About Me'});
-});
-/* GET projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', {title: 'Projects'});
-});
-/* GET services page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', {title: 'Services'});
-});
-/* GET contact page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', {title: 'Contact Us'});
-});
+router.get('/', controllerIndex.home);
+
+// GET about page
+router.get('/about', controllerIndex.about);
+
+// GET projects page
+router.get('/projects', controllerIndex.projects);
+
+// GET services page
+router.get('/services', controllerIndex.services);
+
+// GET contact page
+router.get('/contact', controllerIndex.contact);
 
 module.exports = router;

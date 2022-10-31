@@ -1,0 +1,50 @@
+
+<%- include('partials/header.ejs')%> 
+<%- include('partials/navbar.ejs')%> 
+
+    <!-- <%= BusinessList %> -->
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="row">
+        <h1><%= title %></h1>
+        <br>
+        <div>
+            <a href="/business/add" class="btn btn-primary align-self-end" role="button">
+                <i class="fas fa-plus-circle"></i> 
+                Add a new Item
+            </a>                
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <!-- Header Row-->
+                <tr>
+                    <th class="text-center">Contact Name</th>
+                    <th class="text-center">Contact Number</th>
+                    <th class="text-center">Email Address</th>                   
+                </tr>
+
+                <!-- Repeatable Template Row -->
+
+                <% for(let i = 0; i < BusinessList.length; i++) { %>
+                    <tr>
+                        <td class="text-center"><%= BusinessList[i].contactName %></td>
+                        <td class="text-center"><%= BusinessList[i].contactNumber %></td>
+                        <td class="text-center"><%= BusinessList[i].emailAddress %></td>                       
+                        <td class="text-center">
+                            <a href="/business/edit/<%= BusinessList[i]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i></a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/business/delete/<%= BusinessList[i]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div>
+  </main>
+ <%- include('partials/bottom_nav.ejs')%> 
+  <%- include('partials/footer.ejs')%> 
